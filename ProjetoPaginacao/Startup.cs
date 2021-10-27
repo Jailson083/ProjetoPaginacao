@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ProjetoPaginacao.Data;
 
 namespace ProjetoPaginacao
 {
@@ -25,6 +26,7 @@ namespace ProjetoPaginacao
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<TodoContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
